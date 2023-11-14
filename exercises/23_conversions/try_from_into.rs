@@ -51,7 +51,7 @@ impl TryFrom<(i16, i16, i16)> for Color {
             Err(_) => return Err(IntoColorError::IntConversion),
             Ok(b) => b,
         };
-        Ok(Color { red, green, blue })
+        return Ok(Color { red, green, blue });
     }
 }
 
@@ -71,7 +71,7 @@ impl TryFrom<[i16; 3]> for Color {
             Err(_) => return Err(IntoColorError::IntConversion),
             Ok(b) => b,
         };
-        Ok(Color { red, green, blue })
+        return Ok(Color { red, green, blue });
     }
 }
 
@@ -94,7 +94,7 @@ impl TryFrom<&[i16]> for Color {
                 Err(_) => return Err(IntoColorError::IntConversion),
                 Ok(b) => b,
             };
-            Ok(Color { red, green, blue })
+            return Ok(Color { red, green, blue });
         }
     }
 }
